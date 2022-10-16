@@ -7,11 +7,24 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 class LoginViewController: UIViewController {
     
+    let textStackView = UIStackView()
+    let titleLabel = UILabel()
+    let secondaryLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var userName: String? {
         loginView.userNameTextField.text
@@ -25,10 +38,35 @@ class LoginViewController: UIViewController {
         style()
         layout()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
+    }
 }
 
 extension LoginViewController {
     private func style() {
+        
+        textStackView.translatesAutoresizingMaskIntoConstraints = false
+        textStackView.axis = .vertical
+        textStackView.spacing = 20
+        
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Bankey"
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        titleLabel.adjustsFontForContentSizeCategory = true
+
+        
+        secondaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        secondaryLabel.textAlignment = .center
+        secondaryLabel.text = "Your premium source for all things banking"
+        secondaryLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        secondaryLabel.numberOfLines = 0
+        secondaryLabel.adjustsFontForContentSizeCategory = true
+        
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +84,21 @@ extension LoginViewController {
     }
     
     private func layout() {
+        textStackView.addArrangedSubview(titleLabel)
+        textStackView.addArrangedSubview(secondaryLabel)
+        
+        view.addSubview(textStackView)
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
+        
+        //Text label
+        
+        NSLayoutConstraint.activate([
+            textStackView.bottomAnchor.constraint(equalTo: loginView.topAnchor, constant: -70),
+            textStackView.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            textStackView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+        ])
         
         //Login view
         NSLayoutConstraint.activate([
@@ -74,6 +124,7 @@ extension LoginViewController {
 }
 
 // MARK: - Action
+
 extension LoginViewController {
     @objc func signInTapped () {
         errorMessageLabel.isHidden = true
@@ -90,8 +141,9 @@ extension LoginViewController {
             configureView(withMessage: "Username / password cannot be blank")
         }
         
-        if userName == "Artem" && password == "123" {
+        if userName == "1" && password == "1" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin() 
         } else {
             configureView(withMessage: "Incorrect suername / password")
             signInButton.configuration?.showsActivityIndicator = false
