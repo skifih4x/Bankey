@@ -27,7 +27,7 @@ class AccountSummaryHeaderVIew: UIView {
     
     private func commonInit() {
         let bundle = Bundle(for: AccountSummaryHeaderVIew.self)
-        bundle.loadNibNamed("AccountSummaryHeaderView", owner: self, options: nil)
+        bundle.loadNibNamed("AccountSummaryHeaderVIew", owner: self, options: nil)
         addSubview(contentView)
         contentView.backgroundColor = appColor
         
