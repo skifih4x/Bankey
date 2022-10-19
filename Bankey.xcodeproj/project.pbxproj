@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000ED23028FDAD010031BA02 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000ED22F28FDAD010031BA02 /* AccountSummaryViewController.swift */; };
 		006A940A28F475D500597EAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A940928F475D500597EAA /* AppDelegate.swift */; };
 		006A940E28F475D500597EAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A940D28F475D500597EAA /* LoginViewController.swift */; };
 		006A941328F475D600597EAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A941228F475D600597EAA /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000ED22F28FDAD010031BA02 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		006A940628F475D500597EAA /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A940928F475D500597EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006A940D28F475D500597EAA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000ED22E28FDACDF0031BA02 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				000ED22F28FDAD010031BA02 /* AccountSummaryViewController.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
 		006A93FD28F475D500597EAA = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +77,12 @@
 			isa = PBXGroup;
 			children = (
 				006A940928F475D500597EAA /* AppDelegate.swift */,
+				00DB5D7D28FC6C0500B7322C /* MainViewController.swift */,
 				006A941E28F4772C00597EAA /* Login */,
 				00845DA528FAE49600367A04 /* Onboarding */,
+				000ED22E28FDACDF0031BA02 /* AccountSummary */,
 				00DB5D7828FC480B00B7322C /* Utils */,
 				006A941D28F476EF00597EAA /* Fiels */,
-				00DB5D7D28FC6C0500B7322C /* MainViewController.swift */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -191,6 +202,7 @@
 				006A940E28F475D500597EAA /* LoginViewController.swift in Sources */,
 				00845DA928FAEAEC00367A04 /* OnboardingViewController.swift in Sources */,
 				00DB5D7E28FC6C0500B7322C /* MainViewController.swift in Sources */,
+				000ED23028FDAD010031BA02 /* AccountSummaryViewController.swift in Sources */,
 				006A940A28F475D500597EAA /* AppDelegate.swift in Sources */,
 				00845DA728FAE4A500367A04 /* OnboardingContainerViewController.swift in Sources */,
 			);
