@@ -26,6 +26,8 @@
 		00A7BA5529019458000B04EA /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7BA5429019458000B04EA /* ShakeyBellView.swift */; };
 		00A7BA572901B32E000B04EA /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7BA562901B32E000B04EA /* Date+Utils.swift */; };
 		00A7BA592901B41E000B04EA /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7BA582901B41E000B04EA /* AccountSummaryViewController+Networking.swift */; };
+		00A7BA5D2901BEB2000B04EA /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7BA5C2901BEB2000B04EA /* ProfileTests.swift */; };
+		00A7BA5F2901C19B000B04EA /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7BA5E2901C19B000B04EA /* AccountTests.swift */; };
 		00DA776A2900217400E51AFF /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA77692900217400E51AFF /* AccountSummaryCell.swift */; };
 		00DB5D7A28FC481A00B7322C /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB5D7928FC481A00B7322C /* LocalState.swift */; };
 		00DB5D7C28FC69DA00B7322C /* UIVIiewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB5D7B28FC69DA00B7322C /* UIVIiewController+Utils.swift */; };
@@ -65,6 +67,8 @@
 		00A7BA5429019458000B04EA /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		00A7BA562901B32E000B04EA /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		00A7BA582901B41E000B04EA /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		00A7BA5C2901BEB2000B04EA /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		00A7BA5E2901C19B000B04EA /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		00DA77692900217400E51AFF /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		00DB5D7928FC481A00B7322C /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		00DB5D7B28FC69DA00B7322C /* UIVIiewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIiewController+Utils.swift"; sourceTree = "<group>"; };
@@ -156,7 +160,8 @@
 		007DF74D2900561100E50CD9 /* BankeyUnirTests */ = {
 			isa = PBXGroup;
 			children = (
-				007DF755290056F000E50CD9 /* CurrencyFormatterTest.swift */,
+				00A7BA5B2901BE95000B04EA /* AccountSummary */,
+				00A7BA5A2901BE8B000B04EA /* Utils */,
 			);
 			path = BankeyUnirTests;
 			sourceTree = "<group>";
@@ -176,6 +181,23 @@
 				00A7BA5429019458000B04EA /* ShakeyBellView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		00A7BA5A2901BE8B000B04EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				007DF755290056F000E50CD9 /* CurrencyFormatterTest.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		00A7BA5B2901BE95000B04EA /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				00A7BA5C2901BEB2000B04EA /* ProfileTests.swift */,
+				00A7BA5E2901C19B000B04EA /* AccountTests.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 		00DA77672900213900E51AFF /* Header */ = {
@@ -338,6 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				007DF756290056F000E50CD9 /* CurrencyFormatterTest.swift in Sources */,
+				00A7BA5F2901C19B000B04EA /* AccountTests.swift in Sources */,
+				00A7BA5D2901BEB2000B04EA /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
