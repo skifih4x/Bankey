@@ -51,7 +51,7 @@ extension LoginView {
         
         divederView.translatesAutoresizingMaskIntoConstraints = false
         divederView.backgroundColor = .secondarySystemFill
-        
+         
         layer.cornerRadius = 5
         clipsToBounds = true
     }
