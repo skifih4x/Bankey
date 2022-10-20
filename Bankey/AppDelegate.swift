@@ -26,32 +26,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContrainerViewController.delegate = self
         
-        let vc = mainViewController
-        vc.setStatusBar()
+        registerForNotifications()
         
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = appColor
-        
-        window?.rootViewController = vc
+        displayLogin()
         
         return true
+    }
+    
+    func  registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
+    }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContrainerViewController)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
     }
 }
   
 extension AppDelegate: LoginViewControllerDelegate {
-    
-    func didLogin() {
-        if LocalState.hasOnboarded {
-            setRootViewController(mainViewController)
-        } else  {
-            setRootViewController(onboardingContrainerViewController)
+        
+        func didLogin() {
+            displayNextScreen()
         }
-    }
 }
 
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
+        prepMainView()
         setRootViewController(mainViewController)
     }
 }
@@ -75,7 +91,7 @@ extension AppDelegate {
 }
 
 extension AppDelegate: LogoutDelegate {
-    func didLogout() {
+   @objc func didLogout() {
         setRootViewController(loginViewController)
     }
     
