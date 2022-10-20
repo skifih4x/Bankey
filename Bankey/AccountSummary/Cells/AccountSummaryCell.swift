@@ -50,7 +50,7 @@ class AccountSummaryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
+ 
 extension AccountSummaryCell {
     private func setup(){
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
